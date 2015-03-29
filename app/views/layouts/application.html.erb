@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Schedule Up</title>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+ <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <%= javascript_include_tag 'jquery-ui' %>
+    <%= javascript_include_tag 'modernizr' %>
+</head>
+<body onload=display_time();>
+ <div class="login">
+        <%- if current_user -%>
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <%- else -%>
+
+          <%= link_to 'Sign In', new_user_session_path %>
+          <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
+        <%- end -%>
+       <%- flash.each do |key, value| -%>
+    <div class="flash flash-<%= key %>">
+      <%= value %>
+    </div>
+  <%- end -%>
+      </div>
+<h1><a href="/"><strong>S</strong>chedUp</a></h1>
+ <div class = "navigation-container">
+    <ul class = "nav">
+      <li><a class="active" href="/homes/new">Availability</a></li>
+      <li><a href="/tasks">WhatDoIHave</a></li>
+      <li><a href="/availabilities/new">SetupTime</a></li>
+      <li><a id='ct'></a></li>
+    </ul>
+  </div>
+
+
+  <%= yield %>
+
+
+
+ <%= javascript_include_tag 'application' %>
+   <%= javascript_include_tag 'foundation.min' %>
+
+    <script>
+      $(document).foundation();
+    </script>
+</body>
+</html>

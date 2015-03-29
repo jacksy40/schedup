@@ -1,0 +1,5 @@
+        <%= form_for @date do |h| %>
+          <%= h.label :date %>
+          <%= h.text_field :date, :id => "datepicker" %>
+          <ul><%= h.submit "Do it Up" %></ul>
+          <%end%>

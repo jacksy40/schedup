@@ -1,0 +1,213 @@
+p.ex1 {
+    font: arial, sans-serif;
+}
+
+html {
+  font: arial, sans-serif;
+  background-color: #E6E6E6;
+}
+
+.login {
+  float: right;
+  margin-right: 20px;
+}
+h1 > a{
+  font-size: 40px;
+  text-decoration: none;
+  color: #797D84;
+}
+
+h2 {
+  padding-left: 20px;
+}
+
+.h2s {
+  color: #fff;
+}
+
+h4 {
+  padding-left: 120px;
+}
+
+strong {
+  font-size: 60px;
+  color: #F77219;
+  font: cocktail script;
+}
+
+
+body {
+  padding: 1em;
+  width: 900px;
+  height: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+}
+
+.nav { padding: 0;
+	margin: 0; }
+.nav li { padding: 100;
+	display: inline-block;
+  list-style: none;
+}
+.navigation-container {
+	border-bottom: 3px solid #fff;
+	background: #9BBDCF;
+}
+
+.nav > li > a {
+	display:block ;
+	padding: 15px;
+	color: #858678;
+	text-decoration: none;
+}
+
+.nav > .active,
+.nav > li > a:hover {
+	color: #FBFCE2;
+	text-decoration: none;
+}
+
+.listing > li > a {
+
+  padding-left: 10px;
+  text-decoration: none;
+  color: #2F647D;
+  font-size: 18px;
+}
+
+
+.div_time {
+  float: left;
+  width: 230px;
+  height: 550px;
+  background-color: #80D2D0;
+
+}
+
+.div_task {
+  float: right;
+  width: 665px;
+  margin-right: 0px;
+  height: 550px;
+  background-color: #BADCEB;
+  font_size: 26px;
+
+}
+
+.mdiv1 {
+  float: left;
+  margin-left: 0px;
+  width: 100px;
+  height: 550px;
+}
+
+.mdiv2 {
+  float: right;
+  margin-right : 200px;
+  width: 300px;
+  height: 550px;
+}
+.condition {
+  padding-left: 50px;
+  padding-top: 10px;
+}
+
+.default {
+  padding-left: 50px;
+  padding-top: 60px;
+}
+
+.clock {
+
+  padding_top: 30px;
+  padding-left: 100px;
+
+}
+
+
+#ct {
+  padding-left: 130px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.hour_list {
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+.avail_item_list {
+  padding-left: 250px;
+
+
+}
+.avail_item_list > li {
+  list-style: none;
+}
+.avail_item_list > li > a {
+  list-style: none;
+  text-decoration: none;
+  font-size: 22px;
+  color: #390909;
+  padding-bottom: 5px;
+}
+
+.form1 {
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.weather {
+  padding-top: 40px;
+  padding-left: 40px;
+  font-size: 26px;
+  color: #345678;
+}
+
+.task_each {
+  padding-left: 220px;
+  padding-bottom: 15px;
+  text-decoration: none;
+  list-style: none;
+  font-size: 26px;
+}
+
+.task_date {
+  font-size: 26px;
+  padding-left: 50px;
+}
+
+.task_strong {
+  font-size: 34px;
+  color: #808080;
+}
+.task_td {
+  font-size: 16px;
+  color: #000;
+}
+
+#startup {
+
+  width: 900px;
+  height: 550px;
+  position: relative;
+}
+
+#oauth {
+  padding-top: 50px;
+  padding-left: 500px;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#oauth label {
+ color: #fff;
+}
+
+
+

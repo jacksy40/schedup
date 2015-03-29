@@ -1,0 +1,37 @@
+
+  <div class="div_time">
+    <%if @hours.any?%>
+      <ol class="hour_list">
+        <% @hours.each do |hour| %>
+          <li> <a class='listing'><%=hour.avail_time%></a></li>
+        <%end%>
+      </ol>
+    <%else%>
+    <%end%>
+  </div>
+
+  <div class="div_task" >
+      <%= form_for @tasks do |h| %>
+        <ul><%= h.label :todo %>
+          <%= h.text_field :tasks %></ul>
+        <ul><%= h.label :on %>
+          <%= h.text_field :task_date, :id => "datepicker" %></ul>
+        <ul>
+          <%= h.label :when %>
+            <%= h.select :task_time, options_for_select(@hours.map{|hour| hour.avail_time}) %></ul>
+        <ul><%= h.label :Location %>
+          <%= h.text_field :location %></ul>
+        <ul><%= h.label :Notes %>
+          <%= h.text_field :note %></ul>
+        <ul><%= h.submit "Do it Up" %></ul>
+      <%-end-%>
+
+
+    <div class='weather'>
+      <%if !@weather.nil?%>
+        <%=@weather%>
+      <%end%>
+    <div>
+  </div>
+
+

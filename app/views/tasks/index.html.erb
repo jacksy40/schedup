@@ -1,0 +1,19 @@
+<h2>I have...</h2>
+      <%= link_to 'view by date', new_selectdate_path %>
+
+    <%if @items.any?%>
+    <h4 class='task_date'><%=@items[0][:task_date]%></h4>
+    <ul class="item_list">
+      <% @items.each do |item| %>
+        <div class='task_each'>
+          <li><strong class='task_strong'><%=item[:tasks]%></strong></li>
+            <li class='task_td'><%=item[:task_date]%>
+          <%=item[:task_time]%></li>
+        <li><%=item[:note]%></li>
+        </div>
+      <%end%>
+    </ul>
+    <%else%>
+    <p>nothing for today!</p>
+
+   <%end%>
