@@ -2,10 +2,10 @@ class HomesController < ApplicationController
 
   def index
     @weather = weather
-    @hours = Availability.where(user_id: current_user.id, avail_date: tday)
   end
 
   def new
+    @weather = weather
     @tday = tday
   @tasks = Task.new
   @hours = Availability.where(user_id: current_user.id, avail_date: tday)
@@ -21,7 +21,18 @@ class HomesController < ApplicationController
     parsed_json = JSON.parse(json_string)
     location = parsed_json['location']['city']
     temp_f = parsed_json['current_observation']['temp_f']
-    "Current temperature in #{location} is: #{temp_f}ºf"
+    weather = parsed_json['current_observation']['weather']
+    wind = parsed_json['current_observation']['wind_string']
+    "Current temperature in #{location}\n\n
+     is: #{temp_f}ºF.\n\n
+     Current condition is:\n\n
+     #{weather}.\n\n
+     Wind:\n\n
+     #{wind}."
     end
   end
+
+  def show
+  end
+
 end

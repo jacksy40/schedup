@@ -1,37 +1,77 @@
 
-  <div class="div_time">
-    <%if @hours.any?%>
-      <ol class="hour_list">
-        <% @hours.each do |hour| %>
-          <li> <a class='listing'><%=hour.avail_time%></a></li>
-        <%end%>
-      </ol>
-    <%else%>
-    <%end%>
+
+  <div class="index_div">
+  <%= image_tag('cartoon_sunrise.jpg', height: '280', width: '230') %>
+    <%if !@weather.nil?%>
+        <%=@weather%>
+      <%end%>
   </div>
 
   <div class="div_task" >
+
+  <div class='hour_container'>
+    <%if @hours.any?%>
+      <div class="hour_list">
+        <% @hours.each do |hour| %>
+          <ul class='listing'><%=hour.avail_time%></ul>
+        <%end%>
+      </div>
+    <%end%>
+  </div>
+
+  <div class="form_tag">
+  <p><button id="showr">Show</button>
+        <button id="hidr">Hide</button></p>
       <%= form_for @tasks do |h| %>
+      <div class="large-6 columns">
+      <div class="row collapse postfix-round">
+        <div class="small-9 columns">
         <ul><%= h.label :todo %>
           <%= h.text_field :tasks %></ul>
+          </div>
+          </div>
+          </div>
+          <div class="large-6 columns">
+      <div class="row collapse postfix-round">
+        <div class="small-9 columns">
         <ul><%= h.label :on %>
           <%= h.text_field :task_date, :id => "datepicker" %></ul>
-        <ul>
-          <%= h.label :when %>
+          </div>
+          </div>
+          </div>
+          <div class="large-6 columns">
+      <div class="row collapse postfix-round">
+        <div class="small-9 columns">
+        <ul><%= h.label :when %>
             <%= h.select :task_time, options_for_select(@hours.map{|hour| hour.avail_time}) %></ul>
+            </div>
+            </div>
+            </div>
+            <div class="large-6 columns">
+      <div class="row collapse postfix-round">
+        <div class="small-9 columns">
         <ul><%= h.label :Location %>
           <%= h.text_field :location %></ul>
+          </div>
+          </div>
+          </div>
+          <div class="large-6 columns">
+      <div class="row collapse postfix-round">
+        <div class="small-9 columns">
         <ul><%= h.label :Notes %>
           <%= h.text_field :note %></ul>
+          </div>
+          </div>
+          </div>
         <ul><%= h.submit "Do it Up" %></ul>
+        </div>
+        </div>
       <%-end-%>
-
-
-    <div class='weather'>
-      <%if !@weather.nil?%>
-        <%=@weather%>
-      <%end%>
-    <div>
   </div>
+  </div>
+</div>
+
+
+
 
 

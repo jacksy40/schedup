@@ -9,6 +9,15 @@ $("#datepicker").datepicker("option", "dateFormat", ("yy-mm-dd"));
     });
   });
 });
+$( "#showr" ).click(function() {
+  $( ".listing" ).first().show( "fast", function showNext() {
+    $( this ).next( ".listing" ).show( "fast", showNext );
+  });
+});
+
+$( "#hidr" ).click(function() {
+  $( ".listing" ).hide( 1000 );
+});
 
 function appendZero(num) {
         if (num === 0) {
@@ -43,11 +52,6 @@ function display_c() {
   document.getElementById('ct').innerHTML = showNow;
   display_c()};
 
-  $(document).ready(function() {
-  $(function() {
-  $("#datepicker").datepicker();
-  $("#format").change(function() {
-  $("#datepicker").datepicker("option", "dateFormat", $(this).val());
-  });
-  });
-  });
+
+
+
