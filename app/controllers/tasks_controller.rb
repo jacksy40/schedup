@@ -8,9 +8,18 @@ class TasksController < ApplicationController
   def create
     @hours = current_user.tasks.new(task_params)
     if @hours.save
-      redirect_to tasks_path
+      destroy
     else
+      flash[:notice] = "#{@hours.errors.full_messages[0]}"
+      redirect_to new_home_path
     end
+  end
+
+  def destroy
+    @pop = current_user.availabilities.where(avail_time: params[:task][:task_time], avail_date: params[:task][:task_date]).first
+    @pop.destroy
+    flash[:notice] = "Task added"
+  redirect_to new_home_path
   end
 
   private

@@ -10,6 +10,12 @@ TIME = ['7:00_am','8:00_am','9:00_am','10:00_am','11:00_am','12:00_pm','1:00_pm'
     current_user.id
   end
 
+  def map
+    key = ENV["MAP_KEY"]
+    @map = open("https://maps.googleapis.com/maps/api/js?key=#{key}")
+  end
+
+
   def month
     @date = Time.new
     if @date.month < 10

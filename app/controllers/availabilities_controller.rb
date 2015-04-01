@@ -13,6 +13,8 @@ class AvailabilitiesController < ApplicationController
     if @hours.save
       redirect_to new_availability_path
     else
+      flash[:notice] = "#{@hours.errors.full_messages[0]}"
+      redirect_to new_availability_path
     end
   end
 

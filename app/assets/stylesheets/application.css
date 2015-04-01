@@ -50,36 +50,13 @@ strong {
 
 body {
   padding: 1em;
-  width: 900px;
+  width: 932px;
   height: 800px;
   margin-left: auto;
   margin-right: auto;
   background-color: #fff;
 }
 
-.nav { padding: 0;
-	margin: 0; }
-.nav li { padding: 100;
-	display: inline-block;
-  list-style: none;
-}
-.navigation-container {
-	border-bottom: 3px solid #fff;
-	background: #9BBDCF;
-}
-
-.nav > li > a {
-	display:block ;
-	padding: 15px;
-	color: #858678;
-	text-decoration: none;
-}
-
-.nav > .active,
-.nav > li > a:hover {
-	color: #FBFCE2;
-	text-decoration: none;
-}
 
 .listing > li > a {
 
@@ -89,21 +66,11 @@ body {
   font-size: 18px;
 }
 
-
-.div_time {
-  float: left;
-  width: 230px;
-  height: 550px;
-  background-color: #80D2D0;
-
-}
-
 .index_div {
   float: left;
-  width: 230px;
+  width: 260px;
   height: 550px;
   background-color: #fff;
-
 }
 
 .div_task {
@@ -111,7 +78,7 @@ body {
   width: 635px;
   margin-right: 0px;
   height: 550px;
-  background-color: #BADCEB;
+  background-color: #fff;
   font_size: 26px;
 
 }
@@ -141,7 +108,7 @@ body {
 
 .clock {
 
-  padding_top: 30px;
+  padding-top: 30px;
   padding-left: 100px;
 
 }
@@ -154,8 +121,11 @@ body {
 }
 
 .hour_list ul {
-  padding-left: 10px;
+  border: 1px solid;
+    border-radius: 5px;
+  padding-left: 60px;
   padding-top: 0px;
+  margin-right: 30px;
   background-color: #fff;
 }
 
@@ -187,12 +157,21 @@ body {
   color: #345678;
 }
 
-.task_each {
-  padding-left: 220px;
+.each_task_container {
+  margin-left: 8em;
+  width: 40em;
+  height: 30em;
+  overflow: scroll;
+
+}
+.each_task_container fieldset {
+  border-radius: 1em;
+}
+.each_task {
   padding-bottom: 15px;
   text-decoration: none;
   list-style: none;
-  font-size: 26px;
+  font-size: 16px;
 }
 
 .task_date {
@@ -217,9 +196,9 @@ body {
 }
 
 #oauth {
-  padding-top: 50px;
-  padding-left: 470px;
-  width: 300px;
+  padding-top: 30px;
+  padding-left: 270px;
+  width: 600px;
   height: 200px;
   position: absolute;
     top: 0;
@@ -235,30 +214,60 @@ body {
 }
 
 .image_1 {
-  padding-top: 250px;
+  padding-top: 30px;
+  padding-left: 90px;
 }
 
 .hour_container {
   padding-top: 15px;
+  border-radius: 5px;
+  overflow: scroll;
   float: right;
-  padding-left: 10px;
-  width: 110px;
-  height: 450px;
-  margin-right: 100px;
-
+  width: 250px;
+  height:550px;
+  background-color: #088DA5;
 }
 
 .form_tag {
-  padding-top: 10px;
+  border-radius: 5px;
   float: left;
-  width: 400px;
+  width: 380px;
   height: 550px;
-  background-color: #BADCEB;
-  font_size: 22px;
+  background-color: #FFF6CD;
+  padding-bottom: 2px;
 }
 
-.form_tag p {
-  padding-left: 30px;
+.form_tag button {
+  padding-left: 60px;
+  border-radius: 5px;
+}
+
+.form_tag  p {
+  padding-left: 60px;
+  border-radius: 15px;
+  font-style: italic;
+}
+
+.flash {
+  float: right;
+  background-color: #49A840; /* green */
+  border-radius: 0.5em;
+  color: #fff;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+  display: inline-block;
+  margin-right: none;
+}
+
+.task_form {
+margin-right: 0px;
+}
+
+#oauth input {
+
+  opacity:0.5;
+;
 }
 
 

@@ -11,6 +11,9 @@
     <%= javascript_include_tag 'modernizr' %>
 </head>
 <body onload=display_time();>
+<script type="text/javascript">
+  var RailsEnv = '<%= Rails.env["MAP_KEY"] %>';
+</script>
  <div class="login">
         <%- if current_user -%>
           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
@@ -30,7 +33,10 @@
  <div class = "navigation-container">
     <ul class = "nav">
       <li><a class="active" href="/homes/new">Availability</a></li>
-      <li><a href="/tasks">WhatDoIHave</a></li>
+      <li><a href="/tasks">WhatDoIHave</a>
+        <ul><%= link_to 'By Date', new_selectdate_path %></ul>
+      </li>
+
       <li><a href="/availabilities/new">SetupTime</a></li>
       <li><a id='ct'></a></li>
     </ul>
