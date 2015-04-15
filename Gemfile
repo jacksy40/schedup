@@ -20,12 +20,18 @@ gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
 gem 'foundation-rails'
 
+group :production do
+  gem 'puma'
+  gem 'rails_stdout_logging'
+  gem 'rails_12factor'
+  gem 'rails_serve_static_assets'
+end
+
 group :development, :test do
   gem 'pry-rails', :group => :development
   gem 'web-console', '~> 2.0'
   gem 'spring'
-end
-
-group :test do
   gem 'coveralls', require: false
 end
+
+
