@@ -5,8 +5,6 @@ class TasksController < ApplicationController
     @hours = Availability.where(user_id: current_user.id,
       avail_date: tday).order(avail_time: :asc)
 	end
-  def new
-  end
 
   def update
     @current_task = Task.find( params[:id] )
