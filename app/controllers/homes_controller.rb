@@ -1,17 +1,17 @@
 class HomesController < ApplicationController
 
   def index
+    load_hours
     @weather = weather
+    @events = Event.all
   end
 
   def new
     @weather = weather
     @tday = tday
   @tasks = Task.new
-  @hours = Availability.where(user_id: current_user.id, avail_date: tday)
-  end
-
-  def create
+  @hours = Availability.where(user_id: current_user.id,
+    avail_date: tday).order(avail_time: :asc)
   end
 
   def weather
@@ -30,9 +30,6 @@ class HomesController < ApplicationController
      Wind:\n\n
      #{wind}."
     end
-  end
-
-  def show
   end
 
 end

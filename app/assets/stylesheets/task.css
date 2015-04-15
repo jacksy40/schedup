@@ -1,1 +1,48 @@
-task.css
+.task_control {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.task_control > li {
+  display: inline-block;
+}
+
+.review-form {
+    display: none;
+}
+
+.each_task_container {
+  margin-left: 12em;
+  width: 40em;
+  height: 40em;
+  overflow: auto;
+
+}
+.each_task_container fieldset {
+  border-radius: 1em;
+  margin-top: 1em;
+}
+.each_task {
+  padding-bottom: 15px;
+  text-decoration: none;
+  list-style: none;
+  font-size: 16px;
+}
+
+.task_date {
+  font-size: 26px;
+  padding-left: 50px;
+}
+
+.task_strong {
+  font-size: 34px;
+  color: #808080;
+}
+.task_td {
+  font-size: 16px;
+  color: #000;
+}
+
+.task_form {
+margin-right: 0px;
+}

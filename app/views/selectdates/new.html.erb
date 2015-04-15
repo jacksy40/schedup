@@ -1,5 +1,6 @@
+       <div class="select_date">
         <%= form_for @date do |h| %>
-          <%= h.label :date %>
-          <%= h.text_field :date, :id => "datepicker" %>
-          <ul><%= h.submit "Do it Up" %></ul>
+          <a><%= h.text_field :date, placeholder: "select by date", :id => "datepicker" %>
+          <%= h.submit "go" %></a>
           <%end%>
+        </div>

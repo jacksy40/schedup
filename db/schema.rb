@@ -11,17 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328210658) do
+ActiveRecord::Schema.define(version: 20150414202208) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "attendees", force: :cascade do |t|
+    t.integer  "event_id",   null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "availabilities", force: :cascade do |t|
-    t.string   "avail_time", null: false
+    t.time     "avail_time", null: false
     t.date     "avail_date", null: false
     t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer  "task_id",    null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "message"
+    t.integer  "user_id",    null: false
+    t.integer  "event_id",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "selectdates", force: :cascade do |t|
@@ -34,7 +56,7 @@ ActiveRecord::Schema.define(version: 20150328210658) do
   create_table "tasks", force: :cascade do |t|
     t.string   "tasks",      null: false
     t.date     "task_date",  null: false
-    t.string   "task_time",  null: false
+    t.time     "task_time",  null: false
     t.string   "location",   null: false
     t.integer  "user_id",    null: false
     t.datetime "created_at"

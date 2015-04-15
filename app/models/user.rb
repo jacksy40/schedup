@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
   has_many :tasks
   has_many :availabilities
+  has_many :events
+  has_many :attendees
+  has_many :messages
+  has_many :events, through: :attendees
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

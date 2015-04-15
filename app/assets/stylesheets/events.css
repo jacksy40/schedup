@@ -1,0 +1,99 @@
+.event_div {
+  background-color: #669966;
+  overflow: auto;
+}
+
+.events fieldset {
+  width: 20em;
+  height: 15em;
+  display: inline-block;
+  margin: 1em;
+  border-width: .25em;
+  background-color: #fff;
+  opacity: .7;
+}
+
+.event_div_1 {
+ height: 400px;
+ background-image: url("event.png");
+ background-size: 100%;
+}
+
+.event_div_1 fieldset {
+  width: 30em;
+  height: 20em;
+  display: inline-block;
+  border-width: .25em;
+  background-color: #fff;
+  opacity: .5;
+  float: left;
+  margin-left: 3em;
+}
+
+.event_div_2 {
+  margin-top: 3em;
+  float: bottom;
+  margin-bottom: 2em;
+
+}
+.event_div_2 fieldset {
+  margin-left: 3em;
+  border-width: .25em;
+  background-color: #fff;
+  opacity: .7;
+  float: bottom;
+  width: 57.8em;
+  }
+
+.event_div_3 {
+  float: bottom;
+  margin-top: 2em;
+  margin-bottom: 4em;
+}
+.event_div_3 fieldset {
+  margin-left: 3em;
+  border-width: .25em;
+  background-color: #fff;
+  opacity: .7;
+  float: bottom;
+  width: 57.8em;
+  }
+
+.event_map {
+  float: right;
+  margin-right: 100px;
+}
+
+.event_attendees {
+  display: inline-block;
+  list-style: none;
+  height: 100px;
+}
+.event_chatter {
+  list-style: none;
+  height: auto;
+}
+
+.events {
+  width: 1068px;
+  height: auto;
+  background-color: #64B167;
+  margin-top: .25em;
+  overflow: auto;
+  box-shadow: 2px 2px 2px #B2B2B2;
+  border-radius: .25em;
+}
+.event_links {
+  display: fixed;
+}
+
+.event_detail {
+  float: top;
+  height: 9em;
+  overflow: auto;
+}
+
+.event_control input button {
+  border-radius: 2em;
+  background-color: #FF6600;
+}

@@ -5,7 +5,7 @@
     <% if @avail_hours.any? %>
     <ul class='avail_item_list'>
         <% @avail_hours.each do |hour| %>
-          <li><%= link_to hour.avail_time,
+          <li><%= link_to hour.avail_time.strftime("%I:%M%p"),
           '/availabilities/' + hour.to_param, method: :delete %></li>
         <% end %>
       <% end %>
@@ -13,13 +13,18 @@
   </div>
   <div class='mdiv2'>
       <%= form_for @time do |h| %>
-        <ul><%= h.label :Date %>
-        <%= h.text_field :avail_date, :id => "datepicker" %></ul>
-        <ul><%= h.label :Time %>
-        <%= h.text_field :avail_time %></ul>
+        <%= h.text_field :avail_date, placeholder: "select date", :id => "datepicker" %></ul>
+        <%= h.text_field :avail_time, placeholder: "select Time" %></ul>
         <ul><%= h.submit "Add hours" %></ul>
       <% end %>
-      <ul><%= form_for @time, url:"/availabilities", :method => :delete do |q| %>
+      <ul><%= form_for @time, url:"/availabilities", method: :delete do |q| %>
       <%= q.submit "Reset" %>
       <% end %></ul>
+  </div>
+
+  <div class='mdiv3'>
+      <%= form_for edit_user_registration_path, method: :put do |h| %>
+        <%= h.text_field :username, placeholder: "create username" %></ul>
+        <ul><%= h.submit "create" %></ul>
+      <% end %>
   </div>

@@ -9,27 +9,25 @@
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <%= javascript_include_tag 'jquery-ui' %>
     <%= javascript_include_tag 'modernizr' %>
+   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
 </head>
 <body onload=display_time();>
-<script type="text/javascript">
-  var RailsEnv = '<%= Rails.env["MAP_KEY"] %>';
-</script>
  <div class="login">
         <%- if current_user -%>
           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
         <%- else -%>
-
-
           <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
         <%- end -%>
-
       </div>
+
       <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>
       <% end %>
     </div>
+
 <h1><a href="/"><strong>S</strong>chedUp</a></h1>
+
  <div class = "navigation-container">
     <ul class = "nav">
       <li><a class="active" href="/homes/new">Availability</a></li>
@@ -38,7 +36,10 @@
       </li>
 
       <li><a href="/availabilities/new">SetupTime</a></li>
-      <li><a id='ct'></a></li>
+      <li><span id='ct'></span></li>
+      <% if current_user.present? %>
+      <li><span class="username"><%= current_user.username %></span></li>
+      <% end %>
     </ul>
   </div>
 
