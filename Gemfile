@@ -28,7 +28,6 @@ group :production do
   gem 'rails_stdout_logging'
   gem 'rails_12factor'
   gem 'rails_serve_static_assets'
-  gem 'sprockets_better_errors'
 end
 
 group :development, :test do
