@@ -23,8 +23,9 @@ gem 'foundation-rails'
 group :development, :test do
   gem 'pry-rails', :group => :development
   gem 'web-console', '~> 2.0'
-  gem 'coveralls', require: false
   gem 'spring'
 end
 
-
+group :test do
+  gem 'coveralls', require: false
+end

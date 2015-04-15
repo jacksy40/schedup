@@ -1,5 +1,5 @@
 language: ruby
 rvm:
-  - 2.0.0  # replace this with the ruby version you are using in development
+  - ruby-2.0.0-p576
 before_script:
-  - psql -c 'create database schedup_test;' -U postgres.travis.yml
+  - psql -c 'create database Sched_test;' -U postgres.travis.yml
