@@ -3,11 +3,14 @@
 <head>
   <title>Schedule Up</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= csrf_meta_tags %>
- <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
 </head>
+
 <body onload=display_time();>
+
 <nav class="top-bar" data-topbar role="navigation">
   <ul class="title-area">
     <li class="name">
@@ -54,24 +57,11 @@
 
 
 
-
-
-
-
-
-
-
-
-
   <%= yield %>
 
 
 
  <%= javascript_include_tag 'application' %>
- <script>
-      $(document).foundation();
-    </script>
 
-
-</body>
+  </body>
 </html>

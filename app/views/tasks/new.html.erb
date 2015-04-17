@@ -21,7 +21,7 @@
                 <ul><%= h.label :Notes %>
                   <%= h.text_field :note %></ul>
                 <ul><%= check_box_tag(:share) %>
-                  <%= label_tag(:share, "share public") %>
+                  <%= label_tag(:share, "share with the community") %>
                 </ul>
               <a class="submit-button"><%= h.submit "add" %></a>
             </div>
@@ -32,6 +32,7 @@
 
   <div class="large-5 columns">
     <div class="large-12 map columns">
+      <div id="ct"></div>
         <div id="map-canvas"></div>
       </div>
     </div>
@@ -41,7 +42,7 @@
 
     </div>
   </div>
-
+</div>
 
 
 
