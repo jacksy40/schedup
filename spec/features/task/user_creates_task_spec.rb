@@ -3,7 +3,7 @@ require "rails_helper"
 feature 'user creates a task', %{
   As a user,
   I want to create a task
-  So that I can record a event
+  So that I can record an event
 } do
   let(:user) { FactoryGirl.create(:user) }
 
@@ -11,43 +11,50 @@ feature 'user creates a task', %{
     sign_in_as user
   end
 
-  scenario 'user inputs a task', focus: true do
-    availability = FactoryGirl.create(:availability, user: user)
-    task = FactoryGirl.create(:task, user: user)
+  scenario 'user inputs a task' do
 
-    visit new_home_path
+    visit new_task_path
 
-    click_on "Availability"
-
-    fill_in "task_tasks", with: task.tasks
-    fill_in "datepicker", with: task.task_date
-    select "07:00PM", :from => "task_task_time"
-    fill_in "pac-input", with: task.location
+    fill_in "task_tasks", with: "task"
+    fill_in "datepicker", with: Date.current
+    select "07:00AM", :from => "task_task_time"
+    fill_in "pac-input", with: "location"
 
     click_button "add"
 
-    visit tasks_path
-
-    expect(page).to have_content("Nothing for today!")
-
+    expect(page).to have_content("task")
+    expect(page).to have_content(Date.current.strftime("%m-%d-%Y"))
+    expect(page).to have_content("07:00AM")
+    expect(page).to have_content("location")
   end
 
-  scenario 'user fails to input a location' do
+  scenario 'user leaves location blank' do
 
-     task = FactoryGirl.create(:task, user: user)
+    visit new_task_path
 
-    visit new_home_path
-
-    click_on "Availability"
-
-    fill_in "task_tasks", with: task.tasks
-    fill_in "datepicker", with: task.task_date
-    select "07:00PM", :from => "task_task_time"
+    fill_in "task_tasks", with: "task"
+    fill_in "datepicker", with: Date.current
+    select "01:00PM", :from => "task_task_time"
     fill_in "pac-input", with: ""
 
     click_on "add"
 
     expect(page).to have_content("Location can't be blank")
   end
+
+  scenario 'user leaves task blank' do
+
+    visit new_task_path
+
+    fill_in "task_tasks", with: ""
+    fill_in "datepicker", with: Date.current
+    select "01:00PM", :from => "task_task_time"
+    fill_in "pac-input", with: "Location"
+
+    click_on "add"
+
+    expect(page).to have_content("Tasks can't be blank")
+  end
+
 end
 

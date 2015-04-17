@@ -1,8 +1,5 @@
 class AvailabilitiesController < ApplicationController
 
-  def index
-  end
-
   def new
     @avail_hours= Availability.where(user_id: current_user.id, avail_date: tday).order(:avail_time)
     @time = Availability.new
@@ -28,17 +25,6 @@ class AvailabilitiesController < ApplicationController
   def destroy
     @pop = Availability.find(params[:id])
     @pop.destroy
-  redirect_to new_availability_path
-  end
-
-  def dump
-    @pop = Availability.where(user_id: current_user.id, avail_date: tday )
-      @pop.each do|p|
-        p.destroy
-      end
-    TIME.each do |t|
-      Availability.create(avail_time: t, avail_date: tday, user_id: current_user.id)
-    end
   redirect_to new_availability_path
   end
 

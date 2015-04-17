@@ -5,41 +5,62 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-
-    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
 </head>
 <body onload=display_time();>
- <div class="login">
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1 class="title_name"><a href="/"><strong>S</strong>chedUp</a></h1>
+          </li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="active">
         <% if current_user %>
           <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
         <% else %>
-          <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter) %>
+          <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter ) %>
         <% end %>
-      </div>
-
-      <% flash.each do |key, value| %>
-    <div class="flash flash-<%= key %>">
-      <%= value %>
-      <% end %>
-    </div>
-
-<h1><a href="/"><strong>S</strong>chedUp</a></h1>
-
- <div class = "navigation-container">
-    <ul class = "nav">
-      <li><a class="active" href="/homes/new">Availability</a></li>
-      <li><a href="/tasks">WhatDoIHave</a>
-        <ul><%= link_to 'By Date', new_selectdate_path %></ul>
       </li>
 
-      <li><a href="/availabilities/new">SetupTime</a></li>
-      <li><span id='ct'></span></li>
-      <% if current_user.present? %>
-      <li><span class="username"><%= current_user.username %></span></li>
-      <% end %>
+      <li class="has-dropdown">
+        <a href="#">Schedule</a>
+        <ul class="dropdown">
+          <li><a href="#">First link</a></li>
+          <li class="active"><%= link_to "WhatDoIHave", new_task_path %></li>
+          <li class="active"><%= link_to "By Date", new_selectdate_path %></li>
+          <li class="active"><%= link_to "Setup", new_availability_path %></li>
+        </ul>
+      </li>
     </ul>
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li><a><% if current_user.present? %>
+      <span class="username">Welcome, <%= current_user.username %></span>
+      <% end %></a></li>
+    </ul>
+  </section>
+  </nav>
+  <div class="alert_div">
+    <% flash.each do |key, value| %>
+      <li class="flash flash-<%= key %>">
+        <%= value %>
+      </li>
+    <% end %>
   </div>
+
+
+
+
+
+
+
+
+
+
 
 
   <%= yield %>
@@ -47,9 +68,10 @@
 
 
  <%= javascript_include_tag 'application' %>
-
-    <script>
+ <script>
       $(document).foundation();
     </script>
+
+
 </body>
 </html>

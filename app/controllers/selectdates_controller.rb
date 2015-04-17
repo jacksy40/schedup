@@ -6,9 +6,9 @@ class SelectdatesController < ApplicationController
   end
 
   def create
-   date = params[:selectdate][:date]
-    @items = Task.where(user_id: current_user.id, task_date: date)
-
+    @tasks = Task.where(user_id: current_user.id,
+      task_date: params[:selectdate][:date] )
+    render :index
   end
 
 end

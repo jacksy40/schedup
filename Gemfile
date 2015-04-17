@@ -21,7 +21,7 @@ gem 'factory_girl', group: [:development, :test]
 gem 'valid_attribute', group: [:development, :test]
 gem 'shoulda-matchers', group: [:development, :test], require: false
 gem 'devise'
-gem 'foundation-rails'
+gem 'foundation-rails', github: "zurb/foundation-rails"
 
 group :production do
   gem 'puma'

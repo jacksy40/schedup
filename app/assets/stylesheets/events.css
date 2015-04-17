@@ -1,32 +1,40 @@
 .event_div {
-  background-color: #669966;
+  background-color: #C6DDDD;
   overflow: auto;
+}
+
+#home_div {
+  background-color: #fff;
+  overflow: hidden;
+  height: 25em;
 }
 
 .events fieldset {
   width: 20em;
   height: 15em;
   display: inline-block;
-  margin: 1em;
+  margin: .6em;
   border-width: .25em;
   background-color: #fff;
-  opacity: .7;
+  opacity: .8;
+}
+.event_text {
+  height: 10em;
 }
 
 .event_div_1 {
- height: 400px;
- background-image: url("event.png");
- background-size: 100%;
+  height: 375px;
+  background-color: #F26A46;
 }
 
-.event_div_1 fieldset {
-  width: 30em;
+.event_card {
+  margin-top: 2em;
+}
+.event_card fieldset {
+  width: 25em;
   height: 20em;
-  display: inline-block;
   border-width: .25em;
   background-color: #fff;
-  opacity: .5;
-  float: left;
   margin-left: 3em;
 }
 
@@ -40,7 +48,7 @@
   margin-left: 3em;
   border-width: .25em;
   background-color: #fff;
-  opacity: .7;
+  opacity: .9;
   float: bottom;
   width: 57.8em;
   }
@@ -54,15 +62,10 @@
   margin-left: 3em;
   border-width: .25em;
   background-color: #fff;
-  opacity: .7;
+  opacity: .9;
   float: bottom;
   width: 57.8em;
   }
-
-.event_map {
-  float: right;
-  margin-right: 100px;
-}
 
 .event_attendees {
   display: inline-block;
@@ -75,25 +78,50 @@
 }
 
 .events {
-  width: 1068px;
   height: auto;
-  background-color: #64B167;
-  margin-top: .25em;
+  background-color: #CFCFCF;
   overflow: auto;
-  box-shadow: 2px 2px 2px #B2B2B2;
-  border-radius: .25em;
 }
 .event_links {
   display: fixed;
 }
 
 .event_detail {
+  width: 20em;
+  height: 15em;
+  display: inline-block;
+  margin: 1.5em;
+  background-color: #fff;
+  opacity: .7;
   float: top;
-  height: 9em;
-  overflow: auto;
+  overflow: hidden;
+  border-radius: .5em;
+  box-shadow: .5em .5em .5em #B2B2B2;
 }
 
 .event_control input button {
   border-radius: 2em;
   background-color: #FF6600;
+}
+
+.event_title {
+background-color: #DFC137;
+ box-shadow: 0em .5em .5em #B2B2B2;
+}
+.event_title p {
+color: #fff;
+padding-left: 3em;
+font-size: 20px;
+}
+.event_chatter fieldset {
+width: 50em;
+overflow: auto;
+}
+.event_control {
+  width: 50em;
+  margin: 2.5em;
+}
+
+.event_attendees span {
+  margin: 1em;
 }

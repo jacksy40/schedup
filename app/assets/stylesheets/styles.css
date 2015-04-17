@@ -1,55 +1,9 @@
-html {
-  font-family: sans-serif;
-  background-color: #E6E6E6;
-}
-
-.login {
-  float: right;
-}
-
-h1 > a{
-  font-size: 40px;
-  text-decoration: none;
-  color: #797D84;
-}
-
 h2 {
   padding-left: 20px;
 }
 
-.h2s {
-  color: #fff;
-}
-
 h4 {
   padding-left: 120px;
-}
-
-strong {
-  font-size: 60px;
-  color: #F77219;
-  font: cocktail script;
-}
-
-body {
-  padding: 1em;
-  width: 1100px;
-  height: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #fff;
-}
-
-#home_div {
-  background-color: #fff;
-  overflow: auto;
-}
-
-.listing > li > a {
-  padding-left: 10px;
-  text-decoration: none;
-  color: #2F647D;
-  font-size: 18px;
 }
 
 .index_div {
@@ -71,14 +25,12 @@ body {
   float: left;
   margin-left: 0px;
   width: 100px;
-
 }
 
 .mdiv2 {
   float: right;
   margin-right : 200px;
   width: 300px;
-
 }
 
 .condition {
@@ -140,90 +92,9 @@ body {
   color: #345678;
 }
 
-
-#startup {
-  width: 1068px;
-  height: 550px;
-  position: relative;
-}
-
-#oauth {
-  padding-top: 30px;
-  padding-left: 270px;
-  width: 600px;
-  height: 200px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-#oauth label {
- color: #fff;
-}
-
-#oauth ul a {
- color: #fff;
-}
-
 .image_1 {
   padding-top: 30px;
   padding-left: 90px;
-}
-
-.hour_container {
-  box-shadow: 2px 2px #B1B1B1;
-  padding-top: 15px;
-  border-radius: 5px;
-  overflow: auto;
-  float: right;
-  width: 250px;
-  height:600px;
-  background-color: #088DA5;
-}
-
-.form_tag {
-  border-radius: 10px;
-  float: left;
-  width: 380px;
-  height: 600px;
-  background-color: #FFF6CD;
-  padding-bottom: 2px;
-}
-
-.form_tag button {
-  padding-left: 60px;
-  border-radius: 5px;
-}
-
-.form_tag  p {
-  padding-left: 60px;
-  border-radius: 15px;
-  font-style: italic;
-}
-
-.flash {
-  float: right;
-  background-color: #49A840; /* green */
-  border-radius: 0.5em;
-  color: #fff;
-  padding: 0.5em;
-  margin-bottom: 1em;
-  margin-top: 1em;
-  display: inline-block;
-  margin-right: none;
-}
-
-#oauth input {
-  opacity:0.5;
-}
-
-.sunrise_image {
-  overflow: hidden;
-}
-
-.submit-button input {
-  border-radius: 5em;
-  background-color: #fff;
 }
 
 input:hover {
@@ -235,10 +106,4 @@ background-color: #148BCF;
   border-radius: 20px;
 }
 
-.username {
-  margin-left: 5em;
-}
 
-legend {
-  border-radius: .3em;
-}

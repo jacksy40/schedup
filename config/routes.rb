@@ -1,17 +1,14 @@
 Rails.application.routes.draw do
-  root 'homes#index'
+  root 'events#index'
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
 
-  resources :homes
-  resources :availabilities
-  resources :selectdates
-  resources :events
-  resources :attendees
+  resources :availabilities, only: [ :new, :create, :update, :destroy ]
+  resources :selectdates, only: [ :new, :create, :index ]
+  resources :events, only: [ :new, :create, :show ]
+  resources :attendees, only: [ :create, :destroy ]
   resources :tasks
 
   resources :events do
     resources :messages
   end
-
-  delete '/availabilities' => 'availabilities#dump'
 end

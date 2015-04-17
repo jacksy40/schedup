@@ -42,7 +42,52 @@
   font-size: 16px;
   color: #000;
 }
+.task_message {
+  padding-top: 1em;
+  margin-left: 1em;
+  height: 6em;
+  width: 23em;
+  color: #01a7d7;
+  text-shadow: .03em .03em #fff;
+  font-size: 17px;
+}
+.form_tag {
+  float: bottom;
+  width: auto;
+  height: 41em;
+  background-color: #ededed;
+  padding-bottom: 2px;
+   box-shadow: .0em .3em .5em #B2B2B2;
 
-.task_form {
-margin-right: 0px;
+}
+.form_tag fieldset {
+  margin-right: 1em;
+  background-color: #137132;
+  opacity: .9;
+  color: #000;
+  border-color: #000;
+  box-shadow: .5em .5em .5em #B2B2B2;
+}
+.form_tag label {
+  color: #fff;
+}
+
+.form_tag button {
+  padding-left: 60px;
+  border-radius: 5px;
+}
+
+.form_tag  p {
+  padding-left: 60px;
+  border-radius: 15px;
+  font-style: italic;
+}
+
+.sunrise_image {
+ height: 15em;
+}
+
+.submit-button input {
+  border-radius: 5em;
+  background-color: #fff;
 }

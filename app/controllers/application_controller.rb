@@ -36,6 +36,24 @@ TIME = ['7:00_am','8:00_am','9:00_am','10:00_am','11:00_am','12:00_pm','1:00_pm'
     return "#{@date.year}-#{month}-#{day}"
   end
 
+  def weather
+  api_key = ENV['WEATHER_KEY']
+    open("http://api.wunderground.com/api/#{api_key}/geolookup/conditions/q/MA/Boston.json") do |f|
+    json_string = f.read
+    parsed_json = JSON.parse(json_string)
+    location = parsed_json['location']['city']
+    temp_f = parsed_json['current_observation']['temp_f']
+    weather = parsed_json['current_observation']['weather']
+    wind = parsed_json['current_observation']['wind_string']
+    "Current temperature in #{location}\n\n
+     is: #{temp_f}ºF.\n\n
+     Current condition is:\n\n
+     #{weather}.\n\n
+     Wind:\n\n
+     #{wind}."
+    end
+   end
+
   def load_hours
     date = Date.parse tday.to_s
     @avail = current_user.availabilities.last

@@ -1,14 +1,20 @@
 class EventsController < ApplicationController
   helper_method :joined?
+
+  def index
+    load_hours
+    @events = Event.all
+  end
+
   def new
-    @event = Event.new
+  @event = Event.new
   end
 
   def create
     @event = Event.new( user_id: current_user.id, task_id: params[:format] )
     if @event.save
       flash[:notice] = "Event created"
-      redirect_to homes_path
+      redirect_to events_path
     else
       flash[:notice] = "#{@event.errors.full_messages.first}"
       redirect_to tasks_path

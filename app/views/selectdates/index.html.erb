@@ -1,0 +1,20 @@
+<% if @tasks.any? %>
+    <div class='each_task_container'>
+      <% @tasks.each do |task| %>
+        <div class='each_task'>
+         <fieldset>
+           <legend><%= task[:task_date].strftime("%m-%d-%Y") %></legend>
+             <li><strong class='task_strong'><%= task[:tasks] %></strong></li>
+              <li class='task_td'><%= task[:location] %>
+               <%= task[:task_time].strftime("%I:%M%p") %></li>
+            <li><%= task[:note] %></li>
+          </fieldset>
+        <% end %>
+      </div>
+    </div>
+
+
+    <% else %>
+    <p>Nothing for this date!</p>
+
+   <% end %>

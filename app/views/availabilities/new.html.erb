@@ -16,9 +16,6 @@
         <%= h.text_field :avail_date, placeholder: "select date", :id => "datepicker" %></ul>
         <%= h.text_field :avail_time, placeholder: "select Time" %></ul>
         <ul><%= h.submit "Add hours" %></ul>
-      <% end %>
-      <ul><%= form_for @time, url:"/availabilities", method: :delete do |q| %>
-      <%= q.submit "Reset" %>
       <% end %></ul>
   </div>
 

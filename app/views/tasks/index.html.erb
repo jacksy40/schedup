@@ -48,7 +48,7 @@
                 <div class = 'task_control'>
                  <li class='edit edit-<%= count %>'><%= link_to "edit", "#", name: count %> |</li>
                  <li class='delete delete-<%= count %>'><%= link_to 'delete',task_path(item), method: :delete, name: count %> |</li>
-                  <li class='share share-<%= count %>'><%= link_to 'share',events_path(item), method: :create, name: count %></li>
+                  <li class='share share-<%= count %>'><%= link_to 'share',events_path(item), method: :post, name: count %></li>
                  </div>
 
           </fieldset>

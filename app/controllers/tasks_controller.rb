@@ -1,29 +1,38 @@
 class TasksController < ApplicationController
 	def index
-    @items = Task.where(user_id: current_user.id, task_date: tday)
+    @items = current_user.tasks.where(task_date: tday)
     @tasks = Task.new
-    @hours = Availability.where(user_id: current_user.id,
+    @hours = current_user.availabilities.where(
       avail_date: tday).order(avail_time: :asc)
-	end
+  end
+
+  def new
+    @weather = weather
+    @tday = tday
+    @tasks = Task.new
+    @hours = current_user.availabilities.where(
+      avail_date: tday).order(avail_time: :asc)
+  end
 
   def update
     @current_task = Task.find( params[:id] )
-    @update_time = Availability.where(
-      user_id: current_user.id,
+    @update_time = current_user.availabilities.where(
       avail_date: params[:task][:task_date],
       avail_time: params[:task][:task_time] )
-    if @current_task.task_time != params[:task][:task_time]
-      current_user.availabilities.create(
-        avail_date: @current_task.task_date,
-        avail_time: @current_task.task_time )
-      @update_time.each{ |time| time.destroy }
-
-      @task = @current_task.update_attributes(task_params)
-    else
-
-      @task = @current_task.update_attributes(task_params)
-      flash[:notice] = "task updated"
-    end
+      if params[:task][:task_time] == "" || params[:task][:task_date] == ""
+        flash[:notice] = "Please check date and time."
+      else
+        if @current_task.task_time != params[:task][:task_time]
+          current_user.availabilities.create(
+            avail_date: @current_task.task_date,
+            avail_time: @current_task.task_time )
+          @update_time.each{ |time| time.destroy }
+          @task = @current_task.update_attributes(task_params)
+        else
+          @task = @current_task.update_attributes(task_params)
+          flash[:notice] = "task updated"
+        end
+      end
     redirect_to tasks_path
 end
 
@@ -34,15 +43,18 @@ end
         if params[:share].present?
           Event.create!( user_id: current_user.id, task_id: @task.id )
         end
-        destroy
+      @time = current_user.availabilities.where(avail_time: params[:task][:task_time],
+        avail_date: params[:task][:task_date]).first
+      @time.destroy
+      flash[:notice] = "Task added"
+      redirect_to tasks_path
       else
         flash[:notice] = "#{@task.errors.full_messages.first}"
-        redirect_to new_home_path
+        redirect_to new_task_path
       end
   end
 
   def destroy
-    if params[:id].present?
       @task = Task.find(params[:id])
       @task_event = @task.events
       current_user.availabilities.create(avail_date: @task.task_date,
@@ -50,13 +62,6 @@ end
       @task_event.destroy_all
       @task.destroy
       redirect_to tasks_path
-    else
-      @time = current_user.availabilities.where(avail_time: params[:task][:task_time],
-        avail_date: params[:task][:task_date]).first
-      @time.destroy
-      flash[:notice] = "Task added"
-      redirect_to tasks_path
-    end
   end
 
   private

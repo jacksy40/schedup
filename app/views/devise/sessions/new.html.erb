@@ -1,22 +1,29 @@
-<div id='startup'>
-<%= image_tag("nightsky.jpg") %>
-
-  <div id='oauth'>
-
-  <h2 class='h2s'>Log in</h2>
-
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <ul><%= f.label :email %>
-      <%= f.email_field :email, autofocus: true %></ul>
-      <ul><%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "off" %></ul>
-    <% if devise_mapping.rememberable? -%>
-        <ul><%= f.check_box :remember_me %>
-        <%= f.label :remember_me %></ul>
-    <% end -%>
-      <ul class='links'><%= f.submit "Log in" %></ul>
-  <% end %>
-    <ul><%= render "devise/shared/links" %></ul>
+<div class="large-12 columns login">
+   <div class="login_img"><%= image_tag('login.jpg') %></div>
+  <div class="row">
+    <div class="large-3 columns"></div>
+      <div class="large-6 columns">
+        <div id='startup'>
+          <div id='oauth'>
+            <fieldset>
+            <h2 class='login_label'>Log in</h2>
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                  <ul><%= f.label :email %>
+                  <%= f.email_field :email, autofocus: true, placeholder: "email here" %></ul>
+                  <ul><%= f.label :password %>
+                    <%= f.password_field :password, autocomplete: "off",placeholder: "password" %></ul>
+                    <% if devise_mapping.rememberable? -%>
+                    <ul><%= f.check_box :remember_me %>
+                    <%= f.label :remember_me %></ul>
+                    <% end -%>
+                  <ul class='links'><%= f.submit "Log in" %></ul>
+                <% end %>
+                </fieldset>
+                  <ul><%= render "devise/shared/links" %></ul>
+              </div>
+          </div>
+      </div>
+    <div class="large-3 columns">
+    </div>
   </div>
 </div>
-
