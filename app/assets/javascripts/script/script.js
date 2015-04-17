@@ -6,15 +6,14 @@ $("#datepicker").datepicker("option", "dateFormat", ("yy-mm-dd"));
     });
   });
 });
-$( "#showr" ).click(function() {
-  $( ".listing" ).first().show( "fast", function showNext() {
-    $( this ).next( ".listing" ).show( "fast", showNext );
-  });
-});
 
-$( window ).load(function() {
-  $( ".listing" ).hide();
-});
+// $( "#showr" ).click(function() {
+//   $( ".listing" ).first().show( "fast", function showNext() {
+//     $( this ).next( ".listing" ).show( "fast", showNext );
+//   });
+// });
+
+
 
 $('.edit a').click(function(e){
   e.preventDefault();

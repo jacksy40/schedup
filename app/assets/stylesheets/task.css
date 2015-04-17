@@ -43,7 +43,8 @@
   color: #000;
 }
 .task_message {
-  padding-top: 1em;
+  position: relative;
+  margin-top: 1em;
   margin-left: 1em;
   height: 6em;
   width: 23em;
@@ -52,13 +53,10 @@
   font-size: 17px;
 }
 .form_tag {
-  float: bottom;
-  width: auto;
-  height: 41em;
   background-color: #ededed;
+  height: 41em;
   padding-bottom: 2px;
-   box-shadow: .0em .3em .5em #B2B2B2;
-
+  box-shadow: .0em .3em .5em #B2B2B2;
 }
 .form_tag fieldset {
   margin-right: 1em;
@@ -90,4 +88,12 @@
 .submit-button input {
   border-radius: 5em;
   background-color: #fff;
+}
+
+#ct {
+  margin-right: 4em;
+  width: 40em;
+  color: #01a7d7;
+  text-shadow: .03em .03em #fff;
+  font-size: 17px;
 }
