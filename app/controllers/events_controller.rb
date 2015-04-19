@@ -27,6 +27,17 @@ class EventsController < ApplicationController
     @display_message = Message.where(event_id: params[:id])
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    if @event.destroy
+      flash[:notice] = "Event is canceled."
+    else
+      flash[:notice] = "This event does not belong to you."
+    end
+    redirect_to events_path
+  end
+
   private
 
   def joined?

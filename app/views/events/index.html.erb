@@ -13,15 +13,21 @@
             <fieldset class="event_feildset">
               <legend><%= event.user.username %></legend>
                 <div class="event_text">
-                  <%= event.task.tasks %>
-                  <%= event.task.task_time.strftime("%I:%M%p") %>
-                  <%= event.task.task_date.strftime("%m-%d-%Y") %>
-                  <%= event.task.location %>
+                  <h5><strong><%= event.task.tasks %></strong></h5>
+                  <li><%= event.task.location %></li>
+                  <li><%= event.task.task_date.strftime("%m-%d-%Y") %></li>
+                  <li><%= event.task.task_time.strftime("%I:%M%p") %></li>
                 </div>
-              <div class="event_links"><%= link_to "look @", event_path(event) %></div>
-            </fieldset>
+        <div class="event_links">
+          <% if current_user.id == event.user.id %>
+            <li><%= link_to "cancel", event_path(event), method: :delete %> |</li>
+          <% end %>
+          <li><%= link_to "look @", event_path(event) %></li>
+        </div>
+
+          </fieldset>
         </div>
       <% end %>
     <% end %>
-  </div>
+</div>
 

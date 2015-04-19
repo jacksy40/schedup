@@ -1,12 +1,21 @@
-.event_div {
-  background-color: #C6DDDD;
-  overflow: auto;
-}
-
 #home_div {
   background-color: #fff;
   overflow: hidden;
   height: 25em;
+}
+.event_div {
+  padding-top: 1.5em;
+}
+
+.event_div_1 {
+}
+
+.event_div_2 {
+padding-top: 1.5em;
+}
+
+.event_div_3 {
+
 }
 
 .events fieldset {
@@ -15,17 +24,19 @@
   display: inline-block;
   margin: .6em;
   border-width: .25em;
-  background-color: #fff;
-  opacity: .8;
-}
-.event_text {
-  height: 10em;
+  background-color: #4499a9;
+  color: #000;
 }
 
-.event_div_1 {
-  height: 375px;
-  background-color: #F26A46;
+h5 strong {
+  color: #fff;
 }
+.event_text {
+  list-style: none;
+  height: 10em;
+  overflow: auto;
+}
+
 
 .event_card {
   margin-top: 2em;
@@ -38,43 +49,22 @@
   margin-left: 3em;
 }
 
-.event_div_2 {
-  margin-top: 3em;
-  float: bottom;
-  margin-bottom: 2em;
-
-}
-.event_div_2 fieldset {
-  margin-left: 3em;
-  border-width: .25em;
-  background-color: #fff;
-  opacity: .9;
-  float: bottom;
-  width: 57.8em;
-  }
-
-.event_div_3 {
-  float: bottom;
-  margin-top: 2em;
-  margin-bottom: 4em;
-}
-.event_div_3 fieldset {
-  margin-left: 3em;
-  border-width: .25em;
-  background-color: #fff;
-  opacity: .9;
-  float: bottom;
-  width: 57.8em;
-  }
 
 .event_attendees {
   display: inline-block;
   list-style: none;
   height: 100px;
 }
-.event_chatter {
+.event_chatter{
   list-style: none;
   height: auto;
+}
+.panel .event_chatter{
+  background-color: #fff;
+}
+
+.event_div .panel {
+  background-color: #d6ead1;
 }
 
 .events {
@@ -82,8 +72,13 @@
   background-color: #CFCFCF;
   overflow: auto;
 }
-.event_links {
-  display: fixed;
+.event_links li {
+  display: inline-block;
+  list-style: none;
+}
+
+.event_links a {
+  color: #ffce49;
 }
 
 .event_detail {
@@ -92,8 +87,10 @@
   display: inline-block;
   margin: 1.5em;
   background-color: #fff;
-  opacity: .7;
+  opacity: .9;
   float: top;
+  border-style: solid;
+  border-width: .1em;
   overflow: hidden;
   border-radius: .5em;
   box-shadow: .5em .5em .5em #B2B2B2;
@@ -103,7 +100,9 @@
   border-radius: 2em;
   background-color: #FF6600;
 }
-
+.event_control {
+ list-style: none;
+}
 .event_title {
 background-color: #DFC137;
  box-shadow: 0em .5em .5em #B2B2B2;
@@ -112,14 +111,6 @@ background-color: #DFC137;
 color: #fff;
 padding-left: 3em;
 font-size: 20px;
-}
-.event_chatter fieldset {
-width: 50em;
-overflow: auto;
-}
-.event_control {
-  width: 50em;
-  margin: 2.5em;
 }
 
 .event_attendees span {

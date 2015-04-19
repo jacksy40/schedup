@@ -32,7 +32,7 @@ TIME = ['7:00_am','8:00_am','9:00_am','10:00_am','11:00_am','12:00_pm','1:00_pm'
   end
 
   def tday
-    @date = Time.new
+    @date = DateTime.now
     return "#{@date.year}-#{month}-#{day}"
   end
 
