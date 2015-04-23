@@ -1,4 +1,4 @@
-<h2>I have...</h2>
+<div class="task_title"><h3>I have...</h3></div>
 
   <% if @items.any? %>
      <% count = 0 %>
@@ -44,13 +44,19 @@
             </div>
         </div>
     <% end %>
+    <div class="button small button_color"><%= link_to "ADD TASK", new_task_path %></div>
+      </div>
       </div>
     </div>
   <% else %>
     <div class="row">
-      <div class="small-11 small-centered columns panel">
+      <div class="small-11 small-centered columns"> <div class= "panel">
         <h5>Nothing for today!</h5>
       </div>
-    </div>
-  <% end %>
+      <div class="button_color">
+      <div class="button tiny"><%= link_to "ADD TASK", new_task_path %></div>
+      </div>
+      </div>
+<% end %>
+
 

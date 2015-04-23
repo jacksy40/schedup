@@ -5,58 +5,38 @@
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "vendor/modernizr" %>
   <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
 </head>
 
-<body onload=display_time();>
-<div class="contain-to-grid sticky">
-<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: [small, large]">
-  <ul class="title-area">
-    <li class="name">
-      <h1 class="title_name"><a href="/"><strong>S</strong>chedUp</a></h1>
-          </li>
-          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
+<body>
+<div class="small 12 columns topbar-wrapper">
+  <div class="row topbar">
+    <div class="small-4 columns my_logo">
+          <a href="/" style="color: #385561;">SchedUp</a>
+      <div class="title"></div>
+    </div>
 
-  <section class="top-bar-section">
-    <!-- Right Nav Section -->
-    <ul class="right">
-      <li class="active">
+    <div class="small-8 columns">
+      <div class="my_links">
+        <li class="active"><%= link_to "ADD TASK", new_task_path %></li>
+        <li class="active"><%= link_to "MY TASK", tasks_path %></li>
+        <li class="active"><%= link_to "SEARCH BY DATE", new_selectdate_path %></li>
+        <li class="active"><%= link_to "SETUP", new_availability_path %></li>
         <% if current_user %>
-          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        <li class="sign">
+          <%= link_to 'SIGN OUT', destroy_user_session_path, method: :delete %>
+          </li>
         <% else %>
-          <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter ) %>
+        <li class="twitter_in">
+          <%= link_to image_tag("twitter.png"), user_omniauth_authorize_path(:twitter ) %>
+        </li>
         <% end %>
-      </li>
-
-      <li class="has-dropdown">
-        <a href="#">Schedule</a>
-        <ul class="dropdown">
-          <li class="active"><%= link_to "task", new_task_path %></li>
-          <li class="active"><%= link_to "whatDoIHave", tasks_path %></li>
-          <li class="active"><%= link_to "byDate", new_selectdate_path %></li>
-          <li class="active"><%= link_to "setup", new_availability_path %></li>
-        </ul>
-      </li>
-    </ul>
-    <!-- Left Nav Section -->
-    <ul class="left">
-      <li><a><% if current_user.present? %>
-      <span class="username">Welcome, <%= current_user.username %></span>
-      <% end %></a></li>
-    </ul>
-  </section>
-  </nav>
-</div>
-  <div class="alert_div">
-    <% flash.each do |key, value| %>
-      <li class="flash flash-<%= key %>">
-        <%= value %>
-      </li>
-    <% end %>
+      </div>
+    </div>
   </div>
-
+</div>
 
 
   <%= yield %>

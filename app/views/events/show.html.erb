@@ -1,30 +1,31 @@
-<div class="row">
-    <div class="small-11 small-centered large-centered event_div columns">
-      <div class="event_div panel">
-        <h3><%= @event.task.tasks %></h3>
-          <ul><%= @event.user.username %></ul>
-            <ul><%= @event.task.task_time.strftime("%I:%M%p") %></ul>
-              <ul><%= @event.task.task_date %></ul>
-            <ul><%= @event.task.location %></ul>
-          <ul><%= @event.task.note %></ul>
+<div class="row_1">
+  <div class="row">
+      <div class="small-11 small-centered large-centered event_div columns">
+        <div class="event_div panel">
+          <h3>Main event:  <%= @event.task.tasks %></h3>
+            <ul>Host:  <%= @event.user.username %></ul>
+              <ul>Starts:  <%= @event.task.task_time.strftime("%I:%M%p") %></ul>
+                <ul>Date:  <%= @event.task.task_date %></ul>
+              <ul>Location:  <%= @event.task.location %></ul>
+            <ul>Notes:  <%= @event.task.note %></ul>
+        </div>
       </div>
     </div>
   </div>
 </div>
-
-  <div class="event_title"><p>Detail of this event.</p></div>
-<div class="row event_div_1">
-  <div class="small-11 small-centered columns">
-    <div id="map-canvas" class="small-12 small-centered columns" style="width: 55em; height: 20em;">
+<div class="event_wrapper">
+  <div class="row event_div_1">
+    <div class="small-11 small-centered columns">
+      <div id="map-canvas" style="width: 55em; height: 20em;"></div>
     </div>
   </div>
 </div>
 
-
-  <div class="row event_div_2">
+<div class="event_div_2">
+  <div class="row">
      <div class="small-11 small-centered columns">
         <div class="panel">
-          <h3>Who's coming?</h3>
+          <h3>who's attending?</h3>
             <div class="event_attendees">
               <% if @event %>
                 <% @event.attendees.each do |attendee| %>
@@ -44,24 +45,31 @@
       </div>
     </div>
   </div>
+</div>
+<div class="event_div_3">
 <div class="row">
-  <div class="small-11 small-centered columns event_div_3">
+  <div class="small-11 small-centered columns">
     <div class="panel">
-      <h3>Chatter!</h3>
+      <h3>messages</h3>
         <div class="small-10 small-centered columns panel event_chatter">
             <% if @display_message %>
               <% @display_message.each do |message| %>
-                <li><%= message.user.username %>:</li>
+               <li><%= message.user.username %></li>
                 <li style="color: #FF6633;"><%= message.message %></li>
               <% end %>
+              <div class="chatter_box"></div>
             <% end %>
         </div>
       <div class="small-10 small-centered columns event_control">
-        <%= form_for [ @event, @message ] do |h| %>
+        <%= form_for [ @event, @message], remote: true  do |h| %>
           <ul><%= h.text_field :message %></ul>
-          <ul><%= h. submit "message" %></ul>
+          <ul class="im"><%= h. submit "message"%></ul>
         <% end %>
       </div>
     </div>
   </div>
+</div>
+</div>
+
+<div class="footer">
 </div>

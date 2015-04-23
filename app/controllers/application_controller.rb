@@ -32,7 +32,7 @@ TIME = ['7:00_am','8:00_am','9:00_am','10:00_am','11:00_am','12:00_pm','1:00_pm'
   end
 
   def tday
-    @date = DateTime.now
+    @date = 0.days.ago.localtime
     return "#{@date.year}-#{month}-#{day}"
   end
 
