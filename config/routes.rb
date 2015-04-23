@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' }
 
   resources :availabilities, only: [ :new, :create, :update, :destroy ]
-  resources :selectdates, only: [ :new, :create, :index ]
+  resources :selectdates, only: [ :new, :create, :index, :destroy ]
   resources :events, only: [ :new, :create, :show ]
   resources :attendees, only: [ :create, :destroy ]
   resources :tasks
 
   resources :events do
-    resources :messages
+    resources :messages, only:[ :index, :create ]
   end
 end

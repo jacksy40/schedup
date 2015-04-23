@@ -4,9 +4,22 @@
     <%= image_tag('http://i.huffpost.com/gen/1618592/images/o-HAPPY-PEOPLE-facebook.jpg') %>
   </div>
 </div>
+<div class="row">
+ <div class="small-12 columns username">
+      <li><a><% if current_user.present? %>
+      <span>Welcome, <%= current_user.username %></span>
+      <% end %></a></li>
+    </div>
+    <div class="notification">
+    <% flash.each do |key, value| %>
+          <li class="flash flash-<%= key %>">
+            <%= value %>
+          </li>
+        <% end %>
+    </div>
+  </div>
 
   <div class="events" >
-    <div class="event_title"><p>Go, Join, and Play</p></div>
       <%if @events %>
         <% @events.each do |event| %>
         <div class="event_detail">
@@ -20,14 +33,16 @@
                 </div>
         <div class="event_links">
           <% if current_user.id == event.user.id %>
-            <li><%= link_to "cancel", event_path(event), method: :delete %> |</li>
+            <li><%= link_to "cancel", event_path(event), method: :delete %><span style="color: #fff;"> |</span></li>
           <% end %>
           <li><%= link_to "look @", event_path(event) %></li>
         </div>
 
           </fieldset>
         </div>
+       <% end %>
       <% end %>
-    <% end %>
-</div>
+  </div>
+  <div class="task_footer">
+  </div>
 

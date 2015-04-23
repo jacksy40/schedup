@@ -1,6 +1,10 @@
-       <div class="select_date">
+      <div class="row select_row">
+       <div class="small-5 small-centered columns select_date">
         <%= form_for @date do |h| %>
-          <a><%= h.text_field :date, placeholder: "select by date", :id => "datepicker" %>
-          <%= h.submit "go" %></a>
+          <a><%= h.text_field :date, placeholder: "select by date",autofocus: true, :id => "datepicker" %>
+          <%= h.submit "go", class: "button tiny" %></a>
           <%end%>
         </div>
+      </div>
+ <div class="select_footer">
+  </div>

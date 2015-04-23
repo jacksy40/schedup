@@ -1,10 +1,15 @@
 class MessagesController < ApplicationController
 
   def index
-    # json_movies = Message.where(event_id: params,  }
-    # respond_to do |format|
-    #   format.js { render json: json_movies }
-    # end
+    @user = current_user.username
+    @event = Event.find(params[:event_id])
+    @message = @event.messages
+    @response = { message: @message, user: @user}
+    # respond_with ( @response )
+    respond_to do |format|
+      format.html
+      format.js { render json: response }
+    end
   end
 
   def create
@@ -12,7 +17,10 @@ class MessagesController < ApplicationController
   @message = current_user.messages.new( message_params )
   @message.event_id = @event.id
   @message.save
-  redirect_to event_path( params[:event_id] )
+  respond_to do |format|
+    format.html
+    format.js { render json: @message }
+  end
   end
 
   private

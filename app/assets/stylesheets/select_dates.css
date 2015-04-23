@@ -1,9 +1,52 @@
 .select_date {
   margin: 5em 15em 20em 15em;
+  text-align: center;
 }
 
 .select_date input {
   border-radius: 5em;
-  background-color: #FFF;
   text-align: center;
 }
+.select_date button {
+  text-align: center;
+}
+
+.setup_time input {
+  border-radius: 5em;
+  text-align: center;
+}
+
+.setup_time button {
+  border-radius: 5em;
+  text-align: center;
+}
+
+.setup_time li {
+  list-style: none;
+  padding-left: 3em;
+  display: inline-table;
+}
+
+.setup_time {
+  list-style: none;
+}
+
+.setup_user {
+  padding-top: 4em;
+}
+.setup_user input {
+  border-radius: 5em;
+  text-align: center;
+}
+
+.select_footer {
+   background-color: #20C498;
+  height: 20em;
+}
+
+.select_row {
+  height: 30em;
+}
+
+
+

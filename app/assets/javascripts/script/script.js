@@ -1,8 +1,8 @@
 $(document).ready(function() {
-$(function() {
-$("#datepicker").datepicker();
-$(function() {
-$("#datepicker").datepicker("option", "dateFormat", ("yy-mm-dd"));
+  $(function() {
+    $("#datepicker").datepicker();
+    $(function() {
+      $("#datepicker").datepicker("option", "dateFormat", ("yy-mm-dd"));
     });
   });
 });
@@ -12,8 +12,6 @@ $("#datepicker").datepicker("option", "dateFormat", ("yy-mm-dd"));
 //     $( this ).next( ".listing" ).show( "fast", showNext );
 //   });
 // });
-
-
 
 $('.edit a').click(function(e){
   e.preventDefault();

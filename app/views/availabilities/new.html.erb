@@ -1,27 +1,33 @@
+<div class="row select_row">
+  <div class="small-6 large-5 columns">
+    <h2>setup</h2>
+        <div class='setup_time'>
+      <h7>Click the time you want removed from your availibilty.</h7>
+          <% if @avail_hours.any? %>
+              <% @avail_hours.each do |hour| %>
+               <li><%= link_to hour.avail_time.strftime("%I:%M%p"),
+                 '/availabilities/' + hour.to_param, method: :delete %></li>
+              <% end %>
+          <% end %>
+        </div>
 
-    <h2>I have...</h2>
-    <h4>Click the time you want removed from your availibilty.</h4>
-  <div class='mdiv1'>
-    <% if @avail_hours.any? %>
-    <ul class='avail_item_list'>
-        <% @avail_hours.each do |hour| %>
-          <li><%= link_to hour.avail_time.strftime("%I:%M%p"),
-          '/availabilities/' + hour.to_param, method: :delete %></li>
+    <div class='setup_time'>
+        <%= form_for @time do |h| %>
+          <ul><%= h.text_field :avail_date, placeholder: "select date", :id => "datepicker" %></ul>
+          <ul><%= h.text_field :avail_time, placeholder: "select Time" %></ul>
+          <ul><%= h.submit "Add hours", class: "button tiny" %></ul>
         <% end %>
-      <% end %>
-    </ul>
-  </div>
-  <div class='mdiv2'>
-      <%= form_for @time do |h| %>
-        <%= h.text_field :avail_date, placeholder: "select date", :id => "datepicker" %></ul>
-        <%= h.text_field :avail_time, placeholder: "select Time" %></ul>
-        <ul><%= h.submit "Add hours" %></ul>
-      <% end %></ul>
+    </div>
   </div>
 
-  <div class='mdiv3'>
-      <%= form_for edit_user_registration_path, method: :put do |h| %>
-        <%= h.text_field :username, placeholder: "create username" %></ul>
-        <ul><%= h.submit "create" %></ul>
-      <% end %>
+    <div class="small-6 large-7 setup_user columns">
+        <%= form_for edit_user_registration_path, method: :put do |h| %>
+          <ul><%= h.text_field :username, placeholder: "create username" %></ul>
+          <ul><%= h.submit "create", class: "button tiny" %></ul>
+        <% end %>
+    </div>
+</div>
+<div class="select_footer">
   </div>
+
+

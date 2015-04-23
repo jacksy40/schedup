@@ -18,10 +18,12 @@
   overflow: auto;
 
 }
+
 .each_task_container fieldset {
   border-radius: 1em;
   margin-top: 1em;
 }
+
 .each_task {
   padding-bottom: 15px;
   text-decoration: none;
@@ -43,24 +45,20 @@
   color: #000;
 }
 .task_message {
-  position: relative;
   margin-top: 1em;
-  margin-left: 1em;
-  height: 6em;
-  width: 23em;
+  height: 3em;
+  width: 10em;
   color: #01a7d7;
-  text-shadow: .03em .03em #fff;
   font-size: 17px;
 }
 .form_tag {
   background-color: #ededed;
-  height: 41em;
-  padding-bottom: 2px;
+  margin-top: 1em;
+  padding-bottom: 1em;
   box-shadow: .0em .3em .5em #B2B2B2;
 }
 .form_tag fieldset {
-  margin-right: 1em;
-  background-color: #137132;
+  background-color: #188DC8;
   opacity: .9;
   color: #000;
   border-color: #000;
@@ -87,13 +85,38 @@
 
 .submit-button input {
   border-radius: 5em;
-  background-color: #fff;
+  background-color: #188DC8;
 }
 
 #ct {
-  margin-right: 4em;
   width: 40em;
   color: #01a7d7;
   text-shadow: .03em .03em #fff;
-  font-size: 17px;
+  font-size: 18px;
+  text-align: 2em;
 }
+
+.task_title {
+  margin-left: 11em;
+}
+
+.button_color a {
+  color: #fff;
+  border-radius: 5px;
+}
+
+.weather {
+  margin-top: 1em;
+  margin-left: .6em;
+}
+
+.task_footer {
+  background-color: #20C498;
+  height: 5em;
+}
+
+.task_row {
+  padding-top: 1em;
+}
+
+
