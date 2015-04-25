@@ -1,6 +1,11 @@
 class TasksController < ApplicationController
 	def index
+
+    if params[:date].present?
+    @items = current_user.tasks.where(task_date: params[:date])
+    else
     @items = current_user.tasks.where(task_date: tday)
+    end
     @tasks = Task.new
     @hours = current_user.availabilities.where(
       avail_date: tday).order(avail_time: :asc)
@@ -38,6 +43,7 @@ end
 
   def create
       @task = current_user.tasks.new(task_params)
+      bindinf.pry
       @task.task_date = params[:task][:task_date]
       if @task.save
         if params[:share].present?

@@ -3,24 +3,21 @@ class MessagesController < ApplicationController
   def index
     @user = current_user.username
     @event = Event.find(params[:event_id])
-    @message = @event.messages
-    @response = { message: @message, user: @user}
-    # respond_with ( @response )
+    @messages = @event.messages
     respond_to do |format|
-      format.html
-      format.js { render json: response }
+      format.json { render json: @messages }
     end
   end
 
   def create
-  @event = Event.find(params[:event_id])
-  @message = current_user.messages.new( message_params )
-  @message.event_id = @event.id
-  @message.save
-  respond_to do |format|
-    format.html
-    format.js { render json: @message }
-  end
+    @event = Event.find(params[:event_id])
+    @message = current_user.messages.new( message_params )
+    @message.event_id = @event.id
+    @message.save
+    respond_to do |format|
+      format.html
+      format.js { render json: @message }
+    end
   end
 
   private
